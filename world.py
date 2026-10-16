@@ -24,6 +24,7 @@ class World:
                 self.grid[row_mouse][col_mouse] = 1
         
            # sand falls code here below
+    def update_sandbelow(self):
             for row in range(self.no_row-1,-1,-1):
                 for col in range(self.no_col):
 

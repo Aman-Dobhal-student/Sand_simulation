@@ -39,7 +39,7 @@ while running:
     # from here put update functions
         wld.update(row_mouse,col_mouse) 
                                     
-
+    wld.update_sandbelow() # checks the empty cell below 
 
 
     
