@@ -19,9 +19,24 @@ class World:
 
 
     def update(self,row_mouse,col_mouse):
-        if row_mouse < self.no_row and row_mouse > -1:
+        if row_mouse < self.no_row and row_mouse > -1:  # updates grid
             if col_mouse < self.no_col and col_mouse >-1: 
                 self.grid[row_mouse][col_mouse] = 1
+        
+           # sand falls code here below
+            for row in range(self.no_row-1,-1,-1):
+                for col in range(self.no_col):
+
+                    if self.grid[row][col] == 1:
+                        if row+1 < self.no_row and row+1 > -1:
+                            if self.grid[row+1][col] == 0:
+                                self.grid[row][col] = 0
+                                self.grid[row+1][col] = 1
+                        
+                
+                
+        
+            
                 
     def converter(self,row,col):
         screen_x = col * cell_size
