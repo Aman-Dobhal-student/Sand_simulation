@@ -1,5 +1,5 @@
 import pygame
-from setting import cell_size
+from setting import cell_size,SAND_COLOR
 from setting import WIDTH ,HEIGHT
 
 
@@ -7,8 +7,8 @@ from setting import WIDTH ,HEIGHT
 class World:
     def __init__(self,screen):
         self.screen = screen
-        self.no_row = HEIGHT//10
-        self.no_col = WIDTH//10
+        self.no_row = HEIGHT//cell_size
+        self.no_col = WIDTH//cell_size
         self.grid = []
 
     def fill_world(self):
@@ -57,7 +57,7 @@ class World:
                  if self.grid[row][col] == 1:
                     screen_pos = self.converter(row,col)
                     
-                    pygame.draw.rect(self.screen,(255,255,255),(screen_pos[0],screen_pos[1],10,10))
+                    pygame.draw.rect(self.screen,SAND_COLOR,(screen_pos[0],screen_pos[1],10,10))
                      
                     pass
 
